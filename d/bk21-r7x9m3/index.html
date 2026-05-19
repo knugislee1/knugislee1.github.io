@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BK21 5단계 경북대 지리학과 제안서 (내부검토용)</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --primary: #1a365d;
+    --secondary: #2b6cb0;
+    --accent: #ed8936;
+    --accent2: #38a169;
+    --bg: #f7fafc;
+    --card: #ffffff;
+    --text: #2d3748;
+    --muted: #718096;
+    --border: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 50%, #4299e1 100%);
+    color: white;
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(237,137,54,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(56,161,105,0.1) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, -10px); }
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 2.4em; font-weight: 800; margin-bottom: 12px; }
+  .hero .subtitle { font-size: 1.15em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+  .hero .date { margin-top: 24px; opacity: 0.6; font-size: 0.9em; }
+
+  /* Navigation */
+  .toc {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .toc a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .toc a:hover { background: #ebf4ff; color: var(--primary); }
+
+  /* Sections */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 60px 0; }
+  section:nth-child(even) { background: #edf2f7; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .section-num {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .section-header h2 {
+    font-size: 1.8em;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  .section-header p { color: var(--muted); font-size: 1em; }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+  }
+  .card h3 {
+    font-size: 1.15em;
+    color: var(--primary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card h3 .icon {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* Grid */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  @media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.6em; }
+    .toc { padding: 12px 16px; }
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92em;
+    margin-top: 16px;
+  }
+  th {
+    background: var(--primary);
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.88em;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #f7fafc; }
+  tr:hover td { background: #ebf4ff; }
+
+  /* Tags */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.78em;
+    font-weight: 600;
+    margin: 2px 2px;
+  }
+  .tag-blue { background: #ebf4ff; color: #2b6cb0; }
+  .tag-green { background: #f0fff4; color: #276749; }
+  .tag-orange { background: #fffaf0; color: #c05621; }
+  .tag-purple { background: #faf5ff; color: #6b46c1; }
+  .tag-red { background: #fff5f5; color: #c53030; }
+  .tag-teal { background: #e6fffa; color: #2c7a7b; }
+
+  /* Concept Diagram */
+  .diagram-container {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 40px 24px;
+    margin: 32px 0;
+    border: 2px solid var(--border);
+    overflow-x: auto;
+  }
+  .diagram-title {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 32px;
+  }
+
+  /* SVG diagram */
+  svg text { font-family: 'Pretendard', -apple-system, sans-serif; }
+
+  /* Proposal Cards */
+  .proposal-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px;
+    margin-bottom: 32px;
+    border: 2px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .proposal-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px;
+    height: 100%;
+  }
+  .proposal-card.p1::before { background: linear-gradient(180deg, #2b6cb0, #4299e1); }
+  .proposal-card.p2::before { background: linear-gradient(180deg, #38a169, #68d391); }
+  .proposal-card.p3::before { background: linear-gradient(180deg, #ed8936, #f6ad55); }
+
+  .proposal-num {
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .p1 .proposal-num { background: #ebf4ff; color: #2b6cb0; }
+  .p2 .proposal-num { background: #f0fff4; color: #276749; }
+  .p3 .proposal-num { background: #fffaf0; color: #c05621; }
+
+  .proposal-card h3 {
+    font-size: 1.4em;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  .proposal-card .sub {
+    color: var(--muted);
+    font-size: 0.95em;
+    margin-bottom: 20px;
+  }
+  .proposal-card .track-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  /* Stars */
+  .stars { color: #ed8936; letter-spacing: -2px; }
+  .stars-empty { color: #e2e8f0; letter-spacing: -2px; }
+
+  /* Highlight box */
+  .highlight {
+    background: linear-gradient(135deg, #ebf4ff, #f0fff4);
+    border-radius: 12px;
+    padding: 24px 28px;
+    border-left: 4px solid var(--secondary);
+    margin: 20px 0;
+  }
+  .highlight h4 { color: var(--primary); margin-bottom: 8px; }
+
+  /* Professor cards */
+  .prof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 900px) {
+    .prof-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .prof-grid { grid-template-columns: 1fr; }
+  }
+  .prof-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .prof-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .prof-card .name {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  .prof-card .name-en {
+    font-size: 0.82em;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .prof-card .field {
+    font-size: 0.88em;
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .prof-card .stats {
+    font-size: 0.78em;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .prof-card .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  /* Comparison */
+  .vs-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--card);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+  }
+  .vs-card .vs-name {
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 120px;
+    font-size: 0.92em;
+  }
+  .vs-card .vs-theme {
+    flex: 1;
+    font-size: 0.88em;
+    color: var(--text);
+  }
+  .vs-card .vs-diff {
+    font-size: 0.82em;
+    color: var(--accent);
+    font-weight: 600;
+    min-width: 200px;
+    text-align: right;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--primary);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 32px;
+    font-size: 0.85em;
+  }
+  footer strong { color: white; }
+
+  /* Print */
+  @media print {
+    .toc { display: none; }
+    .hero { padding: 40px 20px; }
+    section { padding: 30px 0; break-inside: avoid; }
+  }
+
+  /* Scroll anchor offset */
+  section[id] { scroll-margin-top: 60px; }
+
+  .flow-arrow {
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--muted);
+    margin: 8px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">INTERNAL REVIEW &middot; 내부검토용</div>
+  <h1>BK21 5단계 경북대 지리학과<br>교육연구단 제안서</h1>
+  <p class="subtitle">6인 교수진의 연구역량 분석, 기존 사업단 차별화 조사, 그리고 3개 주제안 제시</p>
+  <p class="date">2026.05.18 작성 &middot; 비공개 내부 검토 자료</p>
+</div>
+
+<!-- TOC -->
+<nav class="toc">
+  <a href="#direction">5단계 기본방향</a>
+  <a href="#existing">기존 사업단 현황</a>
+  <a href="#professors">교수진 역량</a>
+  <a href="#mapping">역량 매핑</a>
+  <a href="#proposals">3개 주제안</a>
+  <a href="#concept">개념도</a>
+  <a href="#comparison">비교평가</a>
+  <a href="#recommendation">최종 추천</a>
+</nav>
+
+<!-- SECTION 1: 5단계 기본방향 -->
+<section id="direction">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <h2>5단계 BK21 사업 핵심 기본방향</h2>
+    <p>2026.04.29 심포지엄 발표 자료 기반 정리</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3><span class="icon" style="background:#ebf4ff;color:#2b6cb0;">1</span> 기초인재 트랙</h3>
+      <p style="font-size:0.9em; margin-bottom:8px;"><strong>기초학문의 깊이 유지</strong></p>
+      <ul style="font-size:0.85em; padding-left:18px; color:#4a5568;">
+        <li>4단계 '미래인재' → '기초학문분야인재'로 명칭 변경</li>
+        <li>인문사회, 기초과학 등 시장 논리에 취약한 학문 보호</li>
+        <li>단일 학과 참여 가능, K-index 고도화</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="icon" style="background:#f0fff4;color:#276749;">2</span> 융합인재 트랙</h3>
+      <p style="font-size:0.9em; margin-bottom:8px;"><strong>국가전략기술 및 다층적 융합</strong></p>
+      <ul style="font-size:0.85em; padding-left:18px; color:#4a5568;">
+        <li>4단계 '혁신인재' → '학문기술융합분야인재'로 전환</li>
+        <li>국가전략기술 공통 18개 분야 단일형 구축</li>
+        <li>학문 간·지역 간·기관 간 <strong>연합형 대폭 확대</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="icon" style="background:#faf5ff;color:#6b46c1;">3</span> AI인재 트랙</h3>
+      <p style="font-size:0.9em; margin-bottom:8px;"><strong>AI 대전환 시대 융합 인재 (신설)</strong></p>
+      <ul style="font-size:0.85em; padding-left:18px; color:#4a5568;">
+        <li>AI 독자 연구를 위한 <strong>AI 단일형</strong></li>
+        <li>다양한 도메인과 AI를 결합하는 <strong>AI+X, X+AI 연합형</strong></li>
+        <li>교원 겸임/겸무를 통한 중복 참여 허용 검토</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:24px;">
+    <h4>5단계 핵심 변화 포인트</h4>
+    <div class="grid-2" style="margin-top:12px;">
+      <div>
+        <p style="font-size:0.9em;"><strong>지원 주기:</strong> 석·박사 중심 → 학사-석사-박사-포닥 <strong>전주기적</strong> 양성</p>
+        <p style="font-size:0.9em; margin-top:8px;"><strong>지원 단가:</strong> 물가상승률 반영 <strong>Excellence 장학금</strong> 도입</p>
+      </div>
+      <div>
+        <p style="font-size:0.9em;"><strong>글로벌화:</strong> 단기교류 → 실질적 <strong>공동 학위제</strong> 및 정주 인프라</p>
+        <p style="font-size:0.9em; margin-top:8px;"><strong>지역 포용:</strong> 전국/지역 구분 유지, 지역대학 <strong>거점 역할</strong> 강화</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px;">
+    <h3>국가전략기술과 지리학의 접점</h3>
+    <table>
+      <tr><th>국가전략기술 분야</th><th>지리학 연계 연구 주제</th></tr>
+      <tr><td><strong>인공지능 (AI)</strong></td><td>GeoAI, 공간 딥러닝, 위성영상 AI 분석, 이동 패턴 예측</td></tr>
+      <tr><td><strong>첨단 이동수단</strong></td><td>교통·이동 데이터 공간분석, EV 충전 입지 최적화</td></tr>
+      <tr><td><strong>우주항공·해양</strong></td><td>위성 원격탐사, 해양·해안 공간계획</td></tr>
+      <tr><td><strong>첨단 바이오</strong></td><td>환경-건강 공간 연계, 의료접근성 지리학</td></tr>
+      <tr><td><strong>차세대 통신</strong></td><td>공간 빅데이터 플랫폼, 스마트시티 네트워크</td></tr>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 2: 기존 사업단 현황 -->
+<section id="existing">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <h2>기존 BK21 지리학 관련 사업단 현황</h2>
+    <p>4단계 BK21 선정 사업단 조사 결과</p>
+  </div>
+
+  <div class="vs-card" style="border-left: 4px solid #2b6cb0;">
+    <div class="vs-name">경희대<br>CLIMATES</div>
+    <div class="vs-theme">
+      <strong>기후 리터러시 기반 사회과학 연구 및 교육 역량 강화</strong><br>
+      <span style="font-size:0.82em; color:#718096;">미래인재양성 · 인문사회 융복합 | 단장: 이은걸 교수 | 지리학과+정치외교+행정+사회학+미디어</span><br>
+      <span class="tag tag-blue">기후위기 진단</span>
+      <span class="tag tag-green">기후리터러시</span>
+      <span class="tag tag-purple">거버넌스</span>
+    </div>
+    <div class="vs-diff">기후 단일 이슈 특화<br>사회과학 5개학과 연합</div>
+  </div>
+
+  <div class="vs-card" style="border-left: 4px solid #38a169;">
+    <div class="vs-name">서울대<br>환경대학원</div>
+    <div class="vs-theme">
+      <strong>대전환기 지속가능도시 혁신인재 양성단</strong><br>
+      <span style="font-size:0.82em; color:#718096;">혁신인재양성 | 환경대학원 소속 | 도시·환경·공간 융합형</span><br>
+      <span class="tag tag-blue">지속가능 도시</span>
+      <span class="tag tag-green">기후환경 전환</span>
+      <span class="tag tag-orange">C4I 역량</span>
+    </div>
+    <div class="vs-diff">수도권·도시계획 중심<br>환경대학원 기반</div>
+  </div>
+
+  <div class="vs-card" style="border-left: 4px solid #ed8936;">
+    <div class="vs-name">부경대<br>글로벌지역학</div>
+    <div class="vs-theme">
+      <strong>부산 관문도시형 글로벌지역학 전문인력 양성</strong><br>
+      <span style="font-size:0.82em; color:#718096;">미래인재양성 · 지역형 | 글로벌지역학과 | 유라시아·태평양 연계</span><br>
+      <span class="tag tag-blue">관문도시</span>
+      <span class="tag tag-green">국제화</span>
+      <span class="tag tag-orange">글로컬 교육</span>
+    </div>
+    <div class="vs-diff">부산 특화 지역학<br>공간데이터 요소 미약</div>
+  </div>
+
+  <div class="card" style="margin-top:24px;">
+    <h3>공학계열 인접 사업단 (참고)</h3>
+    <table>
+      <tr><th>사업단</th><th>소속</th><th>특징</th></tr>
+      <tr><td>디지털트윈 기반 AI-스마트시티</td><td>중앙대</td><td>공학 중심, 도시계획 AI</td></tr>
+      <tr><td>리질리언트 에코-스마트시티</td><td>성균관대</td><td>글로벌스마트시티 융합</td></tr>
+      <tr><td>4차 산업혁명 시대 도시전문가</td><td>서울시립대</td><td>도시공학과 중심</td></tr>
+      <tr><td>스마트 해양도시 인프라</td><td>부산대</td><td>건설(지역) 해양도시</td></tr>
+    </table>
+  </div>
+
+  <div class="highlight" style="margin-top:20px;">
+    <h4>핵심 시사점</h4>
+    <ul style="font-size:0.9em; padding-left:18px;">
+      <li>지리학과 주도 사업단은 <strong>경희대 CLIMATES가 유일</strong>하게 명확히 확인됨</li>
+      <li>서울대·고려대·충남대·강원대·경북대 지리학과는 4단계에서 독립 사업단 구성 못함</li>
+      <li>도시·환경·공간 연구가 <strong>공학계열로 흡수</strong>되는 구조적 경향</li>
+      <li>경희대 모델(지리학과+사회과학 연합)이 <strong>현실적 벤치마크</strong></li>
+      <li>5단계 지역혁신형 트랙(예산 40%)은 <strong>비수도권 지리학과에 최대 기회</strong></li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 3: 교수진 역량 -->
+<section id="professors">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <h2>경북대 지리학과 교수진 연구 역량</h2>
+    <p>6인 교수의 핵심 연구 분야 및 대표 업적</p>
+  </div>
+
+  <div class="prof-grid">
+    <!-- 이재현 -->
+    <div class="prof-card">
+      <div class="name">이재현</div>
+      <div class="name-en">Jae Hyun Lee</div>
+      <div class="field">교통·모빌리티·에너지전환</div>
+      <div class="stats">피인용 1,200+ | SSCI/SCI 주저자 다수</div>
+      <div class="keywords">
+        <span class="tag tag-blue">EV 충전행태</span>
+        <span class="tag tag-blue">활동공간</span>
+        <span class="tag tag-green">모빌리티 빅데이터</span>
+        <span class="tag tag-orange">인구이동</span>
+        <span class="tag tag-purple">시퀀스분석</span>
+        <span class="tag tag-teal">잠재계층분석</span>
+      </div>
+      <p style="font-size:0.78em; color:#718096; margin-top:10px;">
+        Transportation Research Part A/D, ERSS, Energy 등 게재<br>
+        UC Davis 박사, 국토연구원 연구경력
+      </p>
+    </div>
+
+    <!-- 오정식 -->
+    <div class="prof-card">
+      <div class="name">오정식</div>
+      <div class="name-en">Jeong-Sik Oh</div>
+      <div class="field">지형학·자연환경·재해지형</div>
+      <div class="stats">Nature 인터뷰 | 국제학술지 다수</div>
+      <div class="keywords">
+        <span class="tag tag-green">양산단층</span>
+        <span class="tag tag-green">해안지형</span>
+        <span class="tag tag-blue">하구역 환경</span>
+        <span class="tag tag-orange">LiDAR/UAV</span>
+        <span class="tag tag-purple">제4기 지질</span>
+        <span class="tag tag-teal">서식지 평가</span>
+      </div>
+      <p style="font-size:0.78em; color:#718096; margin-top:10px;">
+        Boreas, AAAG, Natural Hazards 등 게재<br>
+        키르기스스탄·몽골 등 국제 현장조사 수행
+      </p>
+    </div>
+
+    <!-- 김민지 -->
+    <div class="prof-card">
+      <div class="name">김민지</div>
+      <div class="name-en">Minji Kim</div>
+      <div class="field">도시지리·장소변화·산업도시</div>
+      <div class="stats">Journal of Urban Affairs 등 SSCI</div>
+      <div class="keywords">
+        <span class="tag tag-orange">도시관광화</span>
+        <span class="tag tag-orange">젠트리피케이션</span>
+        <span class="tag tag-blue">장소애착</span>
+        <span class="tag tag-red">산업가부장제</span>
+        <span class="tag tag-purple">산업위기도시</span>
+        <span class="tag tag-green">주거이동</span>
+      </div>
+      <p style="font-size:0.78em; color:#718096; margin-top:10px;">
+        Journal of Urban Affairs, Geoforum 등 게재<br>
+        위스콘신-밀워키 박사, 국토연구원 연구경력
+      </p>
+    </div>
+
+    <!-- 요거슨 -->
+    <div class="prof-card">
+      <div class="name">에단 요거슨</div>
+      <div class="name-en">Ethan Yorgason</div>
+      <div class="field">문화지리·지정학·국제비교</div>
+      <div class="stats">Political Geography 등 SSCI</div>
+      <div class="keywords">
+        <span class="tag tag-purple">문화지리학</span>
+        <span class="tag tag-purple">지정학</span>
+        <span class="tag tag-blue">지역정체성</span>
+        <span class="tag tag-green">동아시아</span>
+        <span class="tag tag-orange">국제비교</span>
+        <span class="tag tag-teal">관광지정학</span>
+      </div>
+      <p style="font-size:0.78em; color:#718096; margin-top:10px;">
+        Political Geography, Social & Cultural Geography 등 게재<br>
+        미국 출신, 한국지역 연구 전문
+      </p>
+    </div>
+
+    <!-- 강남영 -->
+    <div class="prof-card">
+      <div class="name">강남영</div>
+      <div class="name-en">Namyoung Kang</div>
+      <div class="field">기후학·태풍·극한기상</div>
+      <div class="stats">Nature Climate Change 등 최상위</div>
+      <div class="keywords">
+        <span class="tag tag-red">태풍 기후학</span>
+        <span class="tag tag-red">극한기상</span>
+        <span class="tag tag-blue">기후변화</span>
+        <span class="tag tag-green">베이지안 예측</span>
+        <span class="tag tag-orange">지구온난화</span>
+        <span class="tag tag-purple">서태평양</span>
+      </div>
+      <p style="font-size:0.78em; color:#718096; margin-top:10px;">
+        Nature Climate Change, Scientific Reports, ERL 등 게재<br>
+        Florida State Univ. 박사, 기상청 경력
+      </p>
+    </div>
+
+    <!-- 전병운 -->
+    <div class="prof-card">
+      <div class="name">전병운</div>
+      <div class="name-en">Byungwoon Jeon</div>
+      <div class="field">GIS·원격탐사·공간분석</div>
+      <div class="stats">ISPRS 등 국제학술지</div>
+      <div class="keywords">
+        <span class="tag tag-teal">GIS/RS</span>
+        <span class="tag tag-teal">머신러닝</span>
+        <span class="tag tag-blue">홍수 취약성</span>
+        <span class="tag tag-green">환경정의</span>
+        <span class="tag tag-orange">인구추정</span>
+        <span class="tag tag-purple">도시녹지</span>
+      </div>
+      <p style="font-size:0.78em; color:#718096; margin-top:10px;">
+        ISPRS IJGI, AAG 등 게재/발표<br>
+        공간통계, 위성영상 AI, dasymetric mapping 전문
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 4: 역량 매핑 -->
+<section id="mapping">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <h2>5단계 BK21 키워드별 교수진 역량 매핑</h2>
+    <p>교수별 연구가 5단계 핵심 키워드와 어떻게 연결되는가</p>
+  </div>
+
+  <div class="card">
+    <table>
+      <tr>
+        <th>교수</th>
+        <th>핵심 방법론</th>
+        <th>AI 융합 가능성</th>
+        <th>국가전략기술 접점</th>
+        <th>지역균형 기여</th>
+      </tr>
+      <tr>
+        <td><strong>이재현</strong></td>
+        <td>공간빅데이터, 시퀀스/DTW, 잠재계층분석</td>
+        <td><span class="tag tag-green">높음</span> 모빌리티 AI 예측</td>
+        <td>첨단이동수단, AI</td>
+        <td>비수도권 인구유출, 고령자 접근성</td>
+      </tr>
+      <tr>
+        <td><strong>오정식</strong></td>
+        <td>현장조사, LiDAR/UAV, 지형분석</td>
+        <td><span class="tag tag-blue">중간</span> UAV 영상 자동분류</td>
+        <td>우주항공·해양</td>
+        <td>경북 해안·하천 자연환경 관리</td>
+      </tr>
+      <tr>
+        <td><strong>김민지</strong></td>
+        <td>질적연구, 심층면접, 비교도시분석</td>
+        <td><span class="tag tag-orange">간접</span> NLP 텍스트분석</td>
+        <td>—</td>
+        <td>산업위기특별지역, 도시재생</td>
+      </tr>
+      <tr>
+        <td><strong>요거슨</strong></td>
+        <td>질적·이론적 분석, 국제비교</td>
+        <td><span class="tag tag-orange">간접</span> 디지털 지정학</td>
+        <td>—</td>
+        <td>로컬리즘, 지역정체성</td>
+      </tr>
+      <tr>
+        <td><strong>강남영</strong></td>
+        <td>기후모델링, 베이지안 통계, 시계열</td>
+        <td><span class="tag tag-green">높음</span> AI 기후예측</td>
+        <td>AI, 기후기술</td>
+        <td>지역별 기후위험 진단</td>
+      </tr>
+      <tr>
+        <td><strong>전병운</strong></td>
+        <td>GeoAI, 공간통계, 위성영상 ML</td>
+        <td><span class="tag tag-green">매우 높음</span> 직접 GeoAI</td>
+        <td>AI, 우주항공·해양</td>
+        <td>홍수 취약지역, 환경형평성</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="highlight">
+    <h4>교수진 역량의 독특한 구조</h4>
+    <p style="font-size:0.9em;">
+      경북대 지리학과는 <strong>자연지리(오정식·강남영)</strong> + <strong>인문지리(김민지·요거슨)</strong> + <strong>공간데이터과학(이재현·전병운)</strong>이라는
+      <strong>3개 축이 균형 있게 공존</strong>하는 드문 구조입니다. 이는 타 대학 지리학과(보통 한두 축에 편중)나
+      공학계 사업단(자연+데이터만 보유)과 차별화되는 <strong>진정한 통합 지리학</strong>의 가능성을 제공합니다.
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 5: 3개 주제안 -->
+<section id="proposals">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <h2>3개 사업단 주제안</h2>
+    <p>기존 사업단과 차별화된, 교수진 역량 기반의 미래지향적 주제</p>
+  </div>
+
+  <!-- 안 1 -->
+  <div class="proposal-card p1">
+    <div class="proposal-num">안 1 &middot; 최우선 추천</div>
+    <h3>삼중전환(Triple Transition) 시대 공간 회복력 인재 양성 교육연구단</h3>
+    <p class="sub">인구·기후·에너지 전환이 교차하는 지역 공간의 진단과 설계</p>
+    <span class="track-badge" style="background:#ebf4ff; color:#2b6cb0;">융합인재 트랙 (연합형)</span>
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div>
+        <p style="font-size:0.9em; margin-bottom:12px;">
+          <strong>핵심 콘셉트:</strong> 인구절벽(인구전환), 극한기상 증가(기후전환), 탈탄소·EV 확산(에너지전환)이라는
+          3대 전환이 비수도권 지역 공간에서 어떻게 <strong>중첩·상호작용</strong>하는지를
+          자연지리+인문지리+공간데이터과학의 통합 시각으로 분석하고,
+          지역의 <strong>공간적 회복력(Spatial Resilience)</strong>을 설계하는 인재 양성
+        </p>
+        <p style="font-size:0.85em; color:#718096;">
+          <strong>대구·경북 = 삼중전환의 살아있는 실험실:</strong><br>
+          구미(산업위기특별지역), 포항(지진 경험), 울진(원전·에너지전환),
+          경북 해안(태풍·해안침식), 대구(도시열섬·초고령화)
+        </p>
+      </div>
+      <div>
+        <table style="font-size:0.85em;">
+          <tr><th>교수</th><th>삼중전환 내 역할</th></tr>
+          <tr><td><strong>이재현</strong></td><td>인구이동·모빌리티 전환, EV 충전인프라, 활동공간 변화</td></tr>
+          <tr><td><strong>강남영</strong></td><td>극한기상 빈도·강도 변화, 기후위험 공간분포 예측</td></tr>
+          <tr><td><strong>전병운</strong></td><td>GeoAI 홍수·재해 취약성, 인구추정, 환경형평성</td></tr>
+          <tr><td><strong>오정식</strong></td><td>해안·하천 지형변화, 자연재해 현장진단, 서식지 보전</td></tr>
+          <tr><td><strong>김민지</strong></td><td>산업도시 위기·전환, 장소애착과 주민적응, 도시재생</td></tr>
+          <tr><td><strong>요거슨</strong></td><td>지역정체성·로컬리즘, 국제비교(미국·대만·아시아)</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:16px; padding:12px 16px; background:#ebf8ff; border-radius:8px; font-size:0.88em;">
+      <strong>차별성:</strong> 경희대 CLIMATES는 "기후" 단일 이슈 → 우리는 기후+인구+산업 <strong>삼중전환의 공간적 중첩</strong>이라는 독자 프레임.
+      자연지리+인문지리+데이터과학 통합은 공학 중심 사업단에서 불가능한 구조.
+    </div>
+  </div>
+
+  <!-- 안 2 -->
+  <div class="proposal-card p2">
+    <div class="proposal-num">안 2</div>
+    <h3>AI×공간지능(Spatial Intelligence) 기반 지역안전 융합인재 양성 교육연구단</h3>
+    <p class="sub">GeoAI와 통합 지리학으로 구현하는 안전하고 지속가능한 지역 공간</p>
+    <span class="track-badge" style="background:#f0fff4; color:#276749;">AI인재 트랙 (AI+X 연합형)</span>
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div>
+        <p style="font-size:0.9em; margin-bottom:12px;">
+          <strong>핵심 콘셉트:</strong> AI 기술과 지리학의 공간적 사고(spatial thinking)를 결합한
+          <strong>공간지능(Spatial Intelligence)</strong> 인재를 양성하여,
+          기후재해·도시안전·환경변화·교통접근성 등 지역사회의 핵심 안전 문제를 해결
+        </p>
+        <p style="font-size:0.85em; color:#718096;">
+          <strong>국가전략기술 접점:</strong> AI, 첨단이동수단, 우주항공·해양(위성원격탐사)<br>
+          "공간지능(Spatial Intelligence)"은 Stanford HAI 등에서 부상 중이나 한국 BK21에서 미선점
+        </p>
+      </div>
+      <div>
+        <table style="font-size:0.85em;">
+          <tr><th>교수</th><th>AI×공간 연구</th></tr>
+          <tr><td><strong>전병운</strong></td><td>ML 홍수취약성, 위성영상 AI, dasymetric AI</td></tr>
+          <tr><td><strong>이재현</strong></td><td>모빌리티 AI 분석, EV 수요 예측, DTW 클러스터링</td></tr>
+          <tr><td><strong>강남영</strong></td><td>베이지안 기후예측, AI 태풍 경로·강도 예측</td></tr>
+          <tr><td><strong>오정식</strong></td><td>UAV/LiDAR 지형 자동분류, 해안선 변화 모니터링</td></tr>
+          <tr><td><strong>김민지</strong></td><td>NLP 장소감정 분석, 도시변화 텍스트마이닝</td></tr>
+          <tr><td><strong>요거슨</strong></td><td>AI 시대 공간 윤리·데이터 주권, 디지털 지정학</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:16px; padding:12px 16px; background:#f0fff4; border-radius:8px; font-size:0.88em;">
+      <strong>차별성:</strong> 기존 AI+도시 사업단(중앙대, 서울시립대 등)은 공학 중심 →
+      우리는 <strong>지리학의 공간적 사고 + AI</strong>라는 독자적 결합. 5단계 신설 AI인재 트랙 직접 진입 가능.
+    </div>
+  </div>
+
+  <!-- 안 3 -->
+  <div class="proposal-card p3">
+    <div class="proposal-num">안 3</div>
+    <h3>위기 지역의 공간분석과 지속가능 전환 전략 인재 양성 교육연구단</h3>
+    <p class="sub">데이터 기반 지역학으로 지방소멸에 대응하는 공간 전문가 양성</p>
+    <span class="track-badge" style="background:#fffaf0; color:#c05621;">기초인재 트랙 (지역형) + 지역혁신형</span>
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div>
+        <p style="font-size:0.9em; margin-bottom:12px;">
+          <strong>핵심 콘셉트:</strong> 인구감소·산업쇠퇴·기후재해가 집중되는
+          <strong>위기 지역(crisis regions)</strong>의 공간적 메커니즘을 다차원 분석하고,
+          근거 기반(evidence-based)의 지역 전환 전략을 수립할 수 있는
+          지역밀착형 공간 전문가 양성
+        </p>
+        <p style="font-size:0.85em; color:#718096;">
+          <strong>5단계 지역혁신 정합성:</strong><br>
+          예산 40% 지역혁신형 배분 → 경북대 유리<br>
+          평가지표 (논문+지역정주 취업률) → 지자체·연구기관 연계<br>
+          RISE 사업 연동 가능
+        </p>
+      </div>
+      <div>
+        <table style="font-size:0.85em;">
+          <tr><th>교수</th><th>위기 지역 연구</th></tr>
+          <tr><td><strong>이재현</strong></td><td>비수도권 인구유출, 지역 모빌리티 격차, 고령자 활동</td></tr>
+          <tr><td><strong>김민지</strong></td><td>산업위기특별지역(구미), 산업가부장제와 도시위기</td></tr>
+          <tr><td><strong>오정식</strong></td><td>하구역·해안 환경관리, 자연환경 지속가능 보전</td></tr>
+          <tr><td><strong>강남영</strong></td><td>지역별 극한기상 위험도, 기후변화 취약 지역 진단</td></tr>
+          <tr><td><strong>전병운</strong></td><td>환경정의, 대중교통 접근성 형평성, 도시녹지 변화</td></tr>
+          <tr><td><strong>요거슨</strong></td><td>한국 관광 지정학, 지역 정체성과 문화자원</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:16px; padding:12px 16px; background:#fffaf0; border-radius:8px; font-size:0.88em;">
+      <strong>차별성:</strong> 5단계 최대 예산 <strong>지역혁신형 트랙</strong>에 최적화.
+      "지방소멸"이라는 국가적 의제를 지리학 고유의 공간분석으로 접근.
+      구미 산업위기특별지역을 실증 연구의 장으로 활용.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 6: 개념도 -->
+<section id="concept" style="background:#edf2f7;">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <h2>안 1 개념도: 삼중전환 시대 공간 회복력</h2>
+    <p>최우선 추천안의 연구 구조와 교수진 연계</p>
+  </div>
+
+  <!-- Main Concept Diagram -->
+  <div class="diagram-container">
+    <div class="diagram-title">삼중전환(Triple Transition) × 공간 회복력(Spatial Resilience) 교육연구단 개념도</div>
+    <svg viewBox="0 0 1000 720" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:1000px; display:block; margin:0 auto;">
+
+      <!-- Background -->
+      <defs>
+        <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#ebf4ff;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#f0fff4;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="g_pop" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#3182ce" />
+          <stop offset="100%" style="stop-color:#2b6cb0" />
+        </linearGradient>
+        <linearGradient id="g_clim" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#e53e3e" />
+          <stop offset="100%" style="stop-color:#c53030" />
+        </linearGradient>
+        <linearGradient id="g_energy" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#38a169" />
+          <stop offset="100%" style="stop-color:#276749" />
+        </linearGradient>
+        <linearGradient id="g_center" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#1a365d" />
+          <stop offset="100%" style="stop-color:#2b6cb0" />
+        </linearGradient>
+        <filter id="shadow">
+          <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.15"/>
+        </filter>
+        <filter id="shadow-sm">
+          <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.1"/>
+        </filter>
+      </defs>
+
+      <!-- Title area -->
+      <text x="500" y="32" text-anchor="middle" font-size="13" fill="#718096" font-weight="600">▼ 3대 전환이 지역 공간에서 중첩되는 구조</text>
+
+      <!-- Three Transition Circles -->
+      <!-- 인구전환 -->
+      <circle cx="250" cy="140" r="90" fill="url(#g_pop)" opacity="0.12" stroke="#3182ce" stroke-width="2"/>
+      <circle cx="250" cy="140" r="65" fill="url(#g_pop)" opacity="0.9" filter="url(#shadow)"/>
+      <text x="250" y="132" text-anchor="middle" fill="white" font-size="16" font-weight="700">인구전환</text>
+      <text x="250" y="152" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11">인구절벽 · 고령화 · 지방소멸</text>
+
+      <!-- 기후전환 -->
+      <circle cx="500" cy="140" r="90" fill="url(#g_clim)" opacity="0.12" stroke="#e53e3e" stroke-width="2"/>
+      <circle cx="500" cy="140" r="65" fill="url(#g_clim)" opacity="0.9" filter="url(#shadow)"/>
+      <text x="500" y="132" text-anchor="middle" fill="white" font-size="16" font-weight="700">기후전환</text>
+      <text x="500" y="152" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11">극한기상 · 재해 · 환경변화</text>
+
+      <!-- 에너지전환 -->
+      <circle cx="750" cy="140" r="90" fill="url(#g_energy)" opacity="0.12" stroke="#38a169" stroke-width="2"/>
+      <circle cx="750" cy="140" r="65" fill="url(#g_energy)" opacity="0.9" filter="url(#shadow)"/>
+      <text x="750" y="132" text-anchor="middle" fill="white" font-size="16" font-weight="700">에너지전환</text>
+      <text x="750" y="152" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11">탈탄소 · EV · 신재생</text>
+
+      <!-- Arrows down to center -->
+      <path d="M250,210 L400,300" stroke="#3182ce" stroke-width="2.5" fill="none" marker-end="url(#arrowBlue)"/>
+      <path d="M500,210 L500,300" stroke="#e53e3e" stroke-width="2.5" fill="none" marker-end="url(#arrowRed)"/>
+      <path d="M750,210 L600,300" stroke="#38a169" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)"/>
+
+      <defs>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#3182ce"/></marker>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#e53e3e"/></marker>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#38a169"/></marker>
+        <marker id="arrowDark" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#2d3748"/></marker>
+      </defs>
+
+      <!-- Center: 공간적 중첩 -->
+      <rect x="350" y="300" width="300" height="80" rx="16" fill="url(#g_center)" filter="url(#shadow)"/>
+      <text x="500" y="335" text-anchor="middle" fill="white" font-size="17" font-weight="800">공간적 중첩 지대</text>
+      <text x="500" y="358" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12">비수도권 지역 공간에서 3대 전환이 교차</text>
+
+      <!-- Label: 대구·경북 -->
+      <rect x="680" y="310" width="200" height="55" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5" stroke-dasharray="4,3" filter="url(#shadow-sm)"/>
+      <text x="780" y="332" text-anchor="middle" fill="#c05621" font-size="11" font-weight="700">대구·경북 실험실</text>
+      <text x="780" y="348" text-anchor="middle" fill="#975a16" font-size="9.5">구미·포항·울진·대구·경북해안</text>
+
+      <!-- Arrow down from center to 3 pillars -->
+      <path d="M420,380 L260,440" stroke="#2d3748" stroke-width="2" fill="none" marker-end="url(#arrowDark)"/>
+      <path d="M500,380 L500,440" stroke="#2d3748" stroke-width="2" fill="none" marker-end="url(#arrowDark)"/>
+      <path d="M580,380 L740,440" stroke="#2d3748" stroke-width="2" fill="none" marker-end="url(#arrowDark)"/>
+
+      <text x="500" y="420" text-anchor="middle" fill="#718096" font-size="11" font-weight="600">통합 지리학적 분석 (3개 축)</text>
+
+      <!-- Three Pillars -->
+      <!-- 자연지리 -->
+      <rect x="140" y="445" width="240" height="95" rx="12" fill="white" stroke="#e53e3e" stroke-width="2" filter="url(#shadow-sm)"/>
+      <rect x="140" y="445" width="240" height="30" rx="12" fill="#e53e3e"/>
+      <rect x="140" y="460" width="240" height="15" fill="#e53e3e"/>
+      <text x="260" y="466" text-anchor="middle" fill="white" font-size="13" font-weight="700">자연지리 축</text>
+      <text x="260" y="498" text-anchor="middle" fill="#2d3748" font-size="11" font-weight="600">오정식 — 지형·재해·환경</text>
+      <text x="260" y="518" text-anchor="middle" fill="#2d3748" font-size="11" font-weight="600">강남영 — 기후·극한기상·예측</text>
+
+      <!-- 인문지리 -->
+      <rect x="390" y="445" width="220" height="95" rx="12" fill="white" stroke="#6b46c1" stroke-width="2" filter="url(#shadow-sm)"/>
+      <rect x="390" y="445" width="220" height="30" rx="12" fill="#6b46c1"/>
+      <rect x="390" y="460" width="220" height="15" fill="#6b46c1"/>
+      <text x="500" y="466" text-anchor="middle" fill="white" font-size="13" font-weight="700">인문지리 축</text>
+      <text x="500" y="498" text-anchor="middle" fill="#2d3748" font-size="11" font-weight="600">김민지 — 도시·산업·장소</text>
+      <text x="500" y="518" text-anchor="middle" fill="#2d3748" font-size="11" font-weight="600">요거슨 — 문화·지정학·국제비교</text>
+
+      <!-- 공간데이터과학 -->
+      <rect x="620" y="445" width="240" height="95" rx="12" fill="white" stroke="#2b6cb0" stroke-width="2" filter="url(#shadow-sm)"/>
+      <rect x="620" y="445" width="240" height="30" rx="12" fill="#2b6cb0"/>
+      <rect x="620" y="460" width="240" height="15" fill="#2b6cb0"/>
+      <text x="740" y="466" text-anchor="middle" fill="white" font-size="13" font-weight="700">공간데이터과학 축</text>
+      <text x="740" y="498" text-anchor="middle" fill="#2d3748" font-size="11" font-weight="600">이재현 — 빅데이터·모빌리티</text>
+      <text x="740" y="518" text-anchor="middle" fill="#2d3748" font-size="11" font-weight="600">전병운 — GeoAI·RS·공간통계</text>
+
+      <!-- Connecting arcs between pillars -->
+      <path d="M380,492 Q385,480 390,492" stroke="#a0aec0" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
+      <path d="M610,492 Q615,480 620,492" stroke="#a0aec0" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
+
+      <!-- Arrow down to output -->
+      <path d="M260,540 L400,590" stroke="#2d3748" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+      <path d="M500,540 L500,590" stroke="#2d3748" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+      <path d="M740,540 L600,590" stroke="#2d3748" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+
+      <!-- Output: 공간 회복력 -->
+      <rect x="320" y="590" width="360" height="75" rx="16" fill="white" stroke="#ed8936" stroke-width="3" filter="url(#shadow)"/>
+      <text x="500" y="618" text-anchor="middle" fill="#c05621" font-size="11" font-weight="700">OUTPUT</text>
+      <text x="500" y="640" text-anchor="middle" fill="#1a365d" font-size="16" font-weight="800">공간 회복력(Spatial Resilience) 설계</text>
+
+      <!-- Bottom outcomes -->
+      <text x="500" y="700" text-anchor="middle" fill="#718096" font-size="11">
+        지역 재해 대응 | 인구유출 완화 | 에너지 인프라 최적화 | 지역 정체성 보전 | 환경 형평성 확보
+      </text>
+    </svg>
+  </div>
+
+  <!-- 대구경북 적용 개념도 -->
+  <div class="diagram-container" style="margin-top:32px;">
+    <div class="diagram-title">대구·경북: 삼중전환의 살아있는 실험실</div>
+    <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:900px; display:block; margin:0 auto;">
+      <!-- Map-like layout -->
+      <rect x="50" y="20" width="800" height="280" rx="16" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+
+      <!-- Daegu -->
+      <circle cx="350" cy="160" r="55" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+      <text x="350" y="148" text-anchor="middle" fill="#1a365d" font-size="14" font-weight="800">대구</text>
+      <text x="350" y="166" text-anchor="middle" fill="#4a5568" font-size="9">도시열섬 · 초고령화</text>
+      <text x="350" y="179" text-anchor="middle" fill="#4a5568" font-size="9">관광지화 · 젠트리피케이션</text>
+
+      <!-- Gumi -->
+      <circle cx="180" cy="100" r="42" fill="#fff5f5" stroke="#e53e3e" stroke-width="2"/>
+      <text x="180" y="94" text-anchor="middle" fill="#c53030" font-size="12" font-weight="700">구미</text>
+      <text x="180" y="109" text-anchor="middle" fill="#4a5568" font-size="8.5">산업위기특별지역</text>
+      <text x="180" y="120" text-anchor="middle" fill="#4a5568" font-size="8.5">산업가부장제·인구유출</text>
+
+      <!-- Pohang -->
+      <circle cx="550" cy="90" r="42" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+      <text x="550" y="84" text-anchor="middle" fill="#c05621" font-size="12" font-weight="700">포항</text>
+      <text x="550" y="99" text-anchor="middle" fill="#4a5568" font-size="8.5">지진 경험 도시</text>
+      <text x="550" y="110" text-anchor="middle" fill="#4a5568" font-size="8.5">재해 회복력 과제</text>
+
+      <!-- Uljin -->
+      <circle cx="680" cy="160" r="42" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+      <text x="680" y="154" text-anchor="middle" fill="#276749" font-size="12" font-weight="700">울진</text>
+      <text x="680" y="169" text-anchor="middle" fill="#4a5568" font-size="8.5">원전 · 에너지전환</text>
+      <text x="680" y="180" text-anchor="middle" fill="#4a5568" font-size="8.5">탈탄소 최전선</text>
+
+      <!-- Gyeongbuk Coast -->
+      <rect x="570" y="220" width="170" height="50" rx="10" fill="#e6fffa" stroke="#2c7a7b" stroke-width="1.5"/>
+      <text x="655" y="242" text-anchor="middle" fill="#234e52" font-size="11" font-weight="700">경북 해안</text>
+      <text x="655" y="257" text-anchor="middle" fill="#4a5568" font-size="9">태풍 · 해안침식 · 하구역</text>
+
+      <!-- Rural areas -->
+      <rect x="100" y="220" width="170" height="50" rx="10" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+      <text x="185" y="242" text-anchor="middle" fill="#553c9a" font-size="11" font-weight="700">경북 내륙 농촌</text>
+      <text x="185" y="257" text-anchor="middle" fill="#4a5568" font-size="9">초고령화 · 지방소멸 · 접근성</text>
+
+      <!-- Connecting lines -->
+      <line x1="222" y1="100" x2="295" y2="140" stroke="#a0aec0" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="405" y1="140" x2="508" y2="100" stroke="#a0aec0" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="405" y1="170" x2="638" y2="165" stroke="#a0aec0" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="350" y1="215" x2="270" y2="230" stroke="#a0aec0" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="400" y1="200" x2="570" y2="235" stroke="#a0aec0" stroke-width="1" stroke-dasharray="4,3"/>
+
+      <!-- Legend -->
+      <text x="500" y="305" text-anchor="middle" fill="#718096" font-size="10">각 지역이 직면한 전환 과제가 다르지만, 모두 공간적 회복력 설계가 필요</text>
+    </svg>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 7: 비교 평가 -->
+<section id="comparison">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <h2>3개안 종합 비교 평가</h2>
+    <p>6개 평가 기준별 비교</p>
+  </div>
+
+  <div class="card">
+    <table>
+      <tr>
+        <th>평가 기준</th>
+        <th style="text-align:center;">안 1: 삼중전환·회복력</th>
+        <th style="text-align:center;">안 2: AI×공간지능</th>
+        <th style="text-align:center;">안 3: 위기지역·전환</th>
+      </tr>
+      <tr>
+        <td><strong>5단계 방향 부합도</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+      </tr>
+      <tr>
+        <td><strong>6명 교수 포괄도</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>기존 사업단 차별성</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+      </tr>
+      <tr>
+        <td><strong>지역대학 어필</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★</span><span class="stars-empty">★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>미래 지향성</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+      </tr>
+      <tr>
+        <td><strong>국가전략기술 연계</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★</span><span class="stars-empty">★★</span></td>
+      </tr>
+      <tr style="background:#ebf4ff;">
+        <td><strong>종합</strong></td>
+        <td style="text-align:center; font-weight:700; color:#2b6cb0;">28/30</td>
+        <td style="text-align:center; font-weight:700; color:#276749;">27/30</td>
+        <td style="text-align:center; font-weight:700; color:#c05621;">26/30</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="grid-3" style="margin-top:24px;">
+    <div class="card" style="border-top:3px solid #2b6cb0;">
+      <h3 style="color:#2b6cb0;">안 1의 강점</h3>
+      <ul style="font-size:0.85em; padding-left:18px;">
+        <li>6명 교수 전원이 <strong>자연스럽게</strong> 연결됨</li>
+        <li>"삼중전환의 공간적 중첩"은 <strong>어디에도 없는</strong> 독자 프레임</li>
+        <li>자연+인문+데이터 통합은 <strong>지리학만 가능</strong></li>
+        <li>대구·경북이 <strong>최적의 실험실</strong></li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:3px solid #38a169;">
+      <h3 style="color:#276749;">안 2의 강점</h3>
+      <ul style="font-size:0.85em; padding-left:18px;">
+        <li>5단계 <strong>신설 AI트랙</strong> 직접 진입</li>
+        <li>"공간지능" 개념 <strong>국내 미선점</strong></li>
+        <li>국가전략기술 <strong>3개 분야</strong> 직접 접속</li>
+        <li>유행 키워드(GeoAI) 활용</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:3px solid #ed8936;">
+      <h3 style="color:#c05621;">안 3의 강점</h3>
+      <ul style="font-size:0.85em; padding-left:18px;">
+        <li>예산 40% <strong>지역혁신형</strong> 최적화</li>
+        <li>"지방소멸" <strong>국가적 의제</strong> 직접 대응</li>
+        <li>구미 산업위기특별지역 <strong>현장성</strong></li>
+        <li>지역정주 취업률 <strong>평가지표</strong> 유리</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 8: 최종 추천 -->
+<section id="recommendation">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <h2>최종 추천 및 전략</h2>
+    <p>검토 의견</p>
+  </div>
+
+  <div class="card" style="border:2px solid #2b6cb0; background:linear-gradient(135deg, #ebf8ff, #f7fafc);">
+    <h3 style="font-size:1.3em; color:#1a365d;">최우선 추천: 안 1 (삼중전환 시대 공간 회복력)</h3>
+    <div style="margin-top:16px; font-size:0.92em;">
+      <p><strong>추천 이유:</strong></p>
+      <ol style="padding-left:20px; margin-top:8px;">
+        <li style="margin-bottom:8px;">6명 교수 모두의 연구가 <strong>억지 없이 자연스럽게</strong> 연결됨</li>
+        <li style="margin-bottom:8px;">경희대 CLIMATES(기후 단일), 서울대(도시 단일)와 <strong>명확히 차별화</strong></li>
+        <li style="margin-bottom:8px;">"삼중전환의 공간적 중첩"이라는 프레임은 <strong>어디에도 없는 독자적 관점</strong></li>
+        <li style="margin-bottom:8px;">대구·경북이 삼중전환의 <strong>살아있는 실험실</strong>로 기능</li>
+        <li style="margin-bottom:8px;">자연지리+인문지리+데이터과학의 통합은 <strong>진정한 통합 지리학</strong>이자 공학계에서는 불가능한 구조</li>
+      </ol>
+    </div>
+    <div style="margin-top:20px; padding:16px; background:white; border-radius:10px; border:1px solid #bee3f8;">
+      <h4 style="color:#2b6cb0; margin-bottom:8px;">전략적 제안</h4>
+      <p style="font-size:0.88em;">
+        안 1을 기본 프레임으로 하되, <strong>안 2의 GeoAI 방법론</strong>을 내재화하면
+        융합인재 트랙에서 경쟁력이 극대화됩니다. 즉, "삼중전환 × 공간 회복력"이라는
+        <strong>문제 정의</strong>와 "GeoAI × 통합지리학"이라는 <strong>방법론</strong>을 결합하는 구조입니다.
+        또한 안 3의 지역혁신 요소(구미 산업위기특별지역, RISE 연계)를
+        사업단의 <strong>현장 실증</strong> 전략으로 포함시키면
+        지역대학으로서의 강점도 부각할 수 있습니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:24px;">
+    <h4>향후 검토 필요 사항</h4>
+    <ul style="font-size:0.9em; padding-left:18px;">
+      <li>연합형 구성 시 파트너 학과 선정 (컴퓨터공학과, 환경학과, 도시공학과 등)</li>
+      <li>5단계 기본계획 시안 (2026년 말 확정 예정) 반영하여 트랙 최종 결정</li>
+      <li>대학원생 충원 전략 및 전주기적 양성 체계 설계</li>
+      <li>국제 공동학위 파트너 대학 검토</li>
+      <li>RISE 사업 연동 방안 구체화</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>경북대학교 지리학과 BK21 5단계 제안서</strong> &middot; 내부검토용 비공개 자료</p>
+  <p style="margin-top:8px;">2026.05.18 작성 &middot; 무단 배포 금지</p>
+</footer>
+
+</body>
+</html>
