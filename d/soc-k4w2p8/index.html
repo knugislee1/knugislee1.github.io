@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BK21 5단계 경북대 사회학과 제안서 (내부검토용)</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --primary: #4a1942;
+    --secondary: #7b2d8e;
+    --accent: #e8590c;
+    --accent2: #2b6cb0;
+    --bg: #faf5ff;
+    --card: #ffffff;
+    --text: #2d3748;
+    --muted: #718096;
+    --border: #e9d8fd;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .hero {
+    background: linear-gradient(135deg, #4a1942 0%, #7b2d8e 50%, #9f7aea 100%);
+    color: white;
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(232,89,12,0.12) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(43,108,176,0.08) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, -10px); }
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 2.4em; font-weight: 800; margin-bottom: 12px; }
+  .hero .subtitle { font-size: 1.15em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+  .hero .date { margin-top: 24px; opacity: 0.6; font-size: 0.9em; }
+
+  .toc {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .toc a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .toc a:hover { background: #f3e8ff; color: var(--primary); }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 60px 0; }
+  section:nth-child(even) { background: #f3e8ff; }
+
+  .section-header { text-align: center; margin-bottom: 48px; }
+  .section-num {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .section-header h2 { font-size: 1.8em; color: var(--primary); margin-bottom: 8px; }
+  .section-header p { color: var(--muted); font-size: 1em; }
+
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+  }
+  .card h3 {
+    font-size: 1.15em;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  @media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.6em; }
+    .toc { padding: 12px 16px; }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92em;
+    margin-top: 16px;
+  }
+  th {
+    background: var(--primary);
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.88em;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #faf5ff; }
+  tr:hover td { background: #f3e8ff; }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.78em;
+    font-weight: 600;
+    margin: 2px 2px;
+  }
+  .tag-purple { background: #f3e8ff; color: #6b46c1; }
+  .tag-blue { background: #ebf4ff; color: #2b6cb0; }
+  .tag-green { background: #f0fff4; color: #276749; }
+  .tag-orange { background: #fffaf0; color: #c05621; }
+  .tag-red { background: #fff5f5; color: #c53030; }
+  .tag-teal { background: #e6fffa; color: #2c7a7b; }
+  .tag-pink { background: #fff5f7; color: #b83280; }
+
+  .highlight {
+    background: linear-gradient(135deg, #f3e8ff, #ebf4ff);
+    border-radius: 12px;
+    padding: 24px 28px;
+    border-left: 4px solid var(--secondary);
+    margin: 20px 0;
+  }
+  .highlight h4 { color: var(--primary); margin-bottom: 8px; }
+
+  .prof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .prof-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .prof-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .prof-card .name { font-size: 1.15em; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+  .prof-card .field { font-size: 0.88em; color: var(--secondary); font-weight: 600; margin-bottom: 10px; }
+  .prof-card .stats { font-size: 0.78em; color: var(--muted); margin-bottom: 10px; }
+  .prof-card .keywords { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+
+  .proposal-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px;
+    margin-bottom: 32px;
+    border: 2px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .proposal-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px;
+    height: 100%;
+  }
+  .proposal-card.p1::before { background: linear-gradient(180deg, #7b2d8e, #9f7aea); }
+  .proposal-card.p2::before { background: linear-gradient(180deg, #2b6cb0, #63b3ed); }
+  .proposal-card.p3::before { background: linear-gradient(180deg, #e8590c, #f6ad55); }
+
+  .proposal-num {
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .p1 .proposal-num { background: #f3e8ff; color: #6b46c1; }
+  .p2 .proposal-num { background: #ebf4ff; color: #2b6cb0; }
+  .p3 .proposal-num { background: #fffaf0; color: #c05621; }
+
+  .proposal-card h3 { font-size: 1.4em; color: var(--primary); margin-bottom: 8px; }
+  .proposal-card .sub { color: var(--muted); font-size: 0.95em; margin-bottom: 20px; }
+
+  .stars { color: #e8590c; letter-spacing: -2px; }
+  .stars-empty { color: #e2e8f0; letter-spacing: -2px; }
+
+  .vs-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--card);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+  }
+  .vs-card .vs-name { font-weight: 700; color: var(--primary); min-width: 100px; font-size: 0.92em; }
+  .vs-card .vs-theme { flex: 1; font-size: 0.88em; color: var(--text); }
+  .vs-card .vs-diff { font-size: 0.82em; color: var(--accent); font-weight: 600; min-width: 180px; text-align: right; }
+
+  .diagram-container {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 40px 24px;
+    margin: 32px 0;
+    border: 2px solid var(--border);
+    overflow-x: auto;
+  }
+  .diagram-title {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 32px;
+  }
+  svg text { font-family: 'Pretendard', -apple-system, sans-serif; }
+
+  footer {
+    background: var(--primary);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 32px;
+    font-size: 0.85em;
+  }
+  footer strong { color: white; }
+  section[id] { scroll-margin-top: 60px; }
+  @media print {
+    .toc { display: none; }
+    .hero { padding: 40px 20px; }
+    section { padding: 30px 0; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">INTERNAL REVIEW &middot; 내부검토용</div>
+  <h1>BK21 5단계 경북대 사회학과<br>교육연구단 제안서</h1>
+  <p class="subtitle">7인 교수진의 연구역량 분석, 기존 사업단 차별화 조사, 그리고 3개 주제안 제시</p>
+  <p class="date">2026.05.18 작성 &middot; 비공개 내부 검토 자료</p>
+</div>
+
+<nav class="toc">
+  <a href="#professors">교수진 역량</a>
+  <a href="#mapping">역량 매핑</a>
+  <a href="#existing">기존 사업단</a>
+  <a href="#proposals">3개 주제안</a>
+  <a href="#concept">개념도</a>
+  <a href="#comparison">비교평가</a>
+  <a href="#recommendation">최종 추천</a>
+</nav>
+
+<!-- SECTION 1: 교수진 -->
+<section id="professors">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <h2>경북대 사회학과 교수진 연구 역량</h2>
+    <p>7인 교수의 핵심 연구 분야 및 대표 업적</p>
+  </div>
+
+  <div class="prof-grid">
+    <div class="prof-card">
+      <div class="name">천선영</div>
+      <div class="field">문화사회학 · 죽음/자살의 사회학</div>
+      <div class="stats">KCI 다수 | 저서 10권+</div>
+      <div class="keywords">
+        <span class="tag tag-purple">죽음의 사회학</span>
+        <span class="tag tag-purple">소통이론</span>
+        <span class="tag tag-blue">공간의 일상정치</span>
+        <span class="tag tag-orange">문화이론</span>
+        <span class="tag tag-teal">루만/푸코</span>
+      </div>
+      <p style="font-size:0.75em; color:#718096; margin-top:8px;">
+        사회와이론, 담론201 등 게재<br>
+        인권수업, 젠더수업 등 대중 저서 다수
+      </p>
+    </div>
+
+    <div class="prof-card">
+      <div class="name">조주은</div>
+      <div class="field">정보사회학 · 디지털 격차</div>
+      <div class="stats">SCI 1편 | KCI 다수</div>
+      <div class="keywords">
+        <span class="tag tag-blue">정보격차</span>
+        <span class="tag tag-blue">장애/접근성</span>
+        <span class="tag tag-teal">전자정부</span>
+        <span class="tag tag-green">사용성 평가</span>
+        <span class="tag tag-orange">유비쿼터스</span>
+      </div>
+      <p style="font-size:0.75em; color:#718096; margin-top:8px;">
+        한국사회학, 정보화정책, LNCS 등 게재<br>
+        장애 유형별 디지털 접근성 전문
+      </p>
+    </div>
+
+    <div class="prof-card">
+      <div class="name">신형진</div>
+      <div class="field">인구학 · 이민/디아스포라</div>
+      <div class="stats">SCI 5편 (Demography 포함)</div>
+      <div class="keywords">
+        <span class="tag tag-red">이민/디아스포라</span>
+        <span class="tag tag-red">인구학</span>
+        <span class="tag tag-blue">통혼/결혼</span>
+        <span class="tag tag-green">다문화</span>
+        <span class="tag tag-orange">청년이동</span>
+        <span class="tag tag-teal">역사인구학</span>
+      </div>
+      <p style="font-size:0.75em; color:#718096; margin-top:8px;">
+        Demography, Int'l Migration, Social Science Research 게재<br>
+        하와이·브라질·키르기즈스탄 한인 디아스포라 연구
+      </p>
+    </div>
+
+    <div class="prof-card">
+      <div class="name">육주원</div>
+      <div class="field">비판사회학 · 다문화/혐오</div>
+      <div class="stats">SCI/SSCI 4편 | Int'l Migration</div>
+      <div class="keywords">
+        <span class="tag tag-red">이슬람혐오</span>
+        <span class="tag tag-red">인종주의</span>
+        <span class="tag tag-pink">젠더/페미니즘</span>
+        <span class="tag tag-purple">문화정책</span>
+        <span class="tag tag-blue">난민</span>
+        <span class="tag tag-orange">초국적이동</span>
+      </div>
+      <p style="font-size:0.75em; color:#718096; margin-top:8px;">
+        Int'l Migration, Int'l J. of Cultural Policy 게재<br>
+        대구 이슬람사원 갈등, 문화검열 연구
+      </p>
+    </div>
+
+    <div class="prof-card">
+      <div class="name">김정원</div>
+      <div class="field">사회적경제 · 복지/자활</div>
+      <div class="stats">KCI 다수 | 저서 20권+</div>
+      <div class="keywords">
+        <span class="tag tag-green">사회적경제</span>
+        <span class="tag tag-green">자활사업</span>
+        <span class="tag tag-blue">협동조합</span>
+        <span class="tag tag-purple">시티즌십</span>
+        <span class="tag tag-orange">노동운동</span>
+        <span class="tag tag-teal">지역사회</span>
+      </div>
+      <p style="font-size:0.75em; color:#718096; margin-top:8px;">
+        경제와 사회, 동향과 전망 등 게재<br>
+        한국 사회적경제의 역사 및 제도 전문
+      </p>
+    </div>
+
+    <div class="prof-card">
+      <div class="name">이정연</div>
+      <div class="field">종교사회학 · 의료사회학</div>
+      <div class="stats">SCI 2편 | Routledge 북챕터</div>
+      <div class="keywords">
+        <span class="tag tag-purple">종교와 도시</span>
+        <span class="tag tag-purple">메가처치</span>
+        <span class="tag tag-pink">정신건강 의료화</span>
+        <span class="tag tag-blue">건강주의</span>
+        <span class="tag tag-orange">자기계발</span>
+        <span class="tag tag-teal">근대성</span>
+      </div>
+      <p style="font-size:0.75em; color:#718096; margin-top:8px;">
+        J. of Asian Sociology, Religions 게재<br>
+        Routledge Handbook of Megachurches 공저
+      </p>
+    </div>
+
+    <div class="prof-card">
+      <div class="name">이상직</div>
+      <div class="field">생애과정 · 불평등 · 인구</div>
+      <div class="stats">SSCI 2편 | Political Studies</div>
+      <div class="keywords">
+        <span class="tag tag-red">생애과정</span>
+        <span class="tag tag-red">청년노동</span>
+        <span class="tag tag-blue">인구레짐</span>
+        <span class="tag tag-green">장애/탈시설</span>
+        <span class="tag tag-orange">노숙인</span>
+        <span class="tag tag-purple">가족주의</span>
+      </div>
+      <p style="font-size:0.75em; color:#718096; margin-top:8px;">
+        Political Studies, 한국사회학, 경제와사회 게재<br>
+        형제복지원 연구, 사회적경제 거버넌스 전문
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 2: 역량 매핑 -->
+<section id="mapping">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <h2>5단계 BK21 키워드별 교수진 역량 매핑</h2>
+    <p>7명 교수의 연구가 5단계 핵심 키워드와 어떻게 연결되는가</p>
+  </div>
+
+  <div class="card">
+    <h3>교수별 5단계 접점 분석</h3>
+    <table>
+      <tr>
+        <th>교수</th>
+        <th>핵심 연구 분야</th>
+        <th>5단계 접점</th>
+        <th>지역균형 기여</th>
+      </tr>
+      <tr>
+        <td><strong>천선영</strong></td>
+        <td>죽음/자살의 사회학, 소통이론, 공간정치, 문화이론</td>
+        <td>존재론적 위기 진단, 일상의 문화적 차원</td>
+        <td>대구 일상문화, 공간의 일상정치</td>
+      </tr>
+      <tr>
+        <td><strong>조주은</strong></td>
+        <td>정보격차, 장애/접근성, 전자정부, 유비쿼터스</td>
+        <td><span class="tag tag-blue">AI 직접 접점</span> 디지털 배제, AI시대 접근성</td>
+        <td>디지털 격차의 지역적 차원</td>
+      </tr>
+      <tr>
+        <td><strong>신형진</strong></td>
+        <td>인구학, 이민/디아스포라, 통혼, 역사인구학</td>
+        <td>인구절벽 대응, 이민정책, 데이터 기반 인구분석</td>
+        <td>대구·경북 대졸자 취업이동, 청년유출</td>
+      </tr>
+      <tr>
+        <td><strong>육주원</strong></td>
+        <td>혐오/인종주의, 다문화, 문화정책, 젠더</td>
+        <td>사회갈등 관리, 다문화 포용, 혐오 대응</td>
+        <td>대구 이슬람사원 갈등, 지역 페미니즘</td>
+      </tr>
+      <tr>
+        <td><strong>김정원</strong></td>
+        <td>사회적경제, 자활, 협동조합, 시티즌십</td>
+        <td>지역혁신, 사회적경제 생태계, 돌봄체계</td>
+        <td>지역 자활센터, 농촌 사회적경제</td>
+      </tr>
+      <tr>
+        <td><strong>이정연</strong></td>
+        <td>종교사회학, 의료사회학, 도시와 종교, 정신건강</td>
+        <td>건강 불평등, 의료화 비판, 도시 전환</td>
+        <td>도시 종교시장 변화, 정신건강 관리</td>
+      </tr>
+      <tr>
+        <td><strong>이상직</strong></td>
+        <td>생애과정, 청년노동, 인구레짐, 장애/노숙</td>
+        <td>인구정책, 청년 불평등, 탈시설 권리</td>
+        <td>지역 청년 노동시장, 사회적경제 거버넌스</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="highlight">
+    <h4>교수진 역량의 독특한 구조: 5개 축의 교차</h4>
+    <div class="grid-2" style="margin-top:12px; font-size:0.9em;">
+      <div>
+        <p><strong>① 위기·배제 진단 축:</strong> 천선영(존재론적 위기) + 조주은(디지털 배제) + 이상직(구조적 배제)</p>
+        <p style="margin-top:8px;"><strong>② 인구·이동 축:</strong> 신형진(인구학·이민) + 이상직(인구레짐·청년) + 육주원(초국적 이동)</p>
+        <p style="margin-top:8px;"><strong>③ 갈등·혐오 축:</strong> 육주원(인종주의·혐오) + 천선영(공간정치) + 이정연(종교 갈등)</p>
+      </div>
+      <div>
+        <p><strong>④ 돌봄·연대 축:</strong> 김정원(사회적경제) + 이상직(탈시설·복지) + 이정연(건강·의료화)</p>
+        <p style="margin-top:8px;"><strong>⑤ 디지털·문화전환 축:</strong> 조주은(디지털격차) + 천선영(소통·문화이론) + 육주원(문화정책)</p>
+        <p style="margin-top:8px; padding:10px; background:rgba(123,45,142,0.08); border-radius:8px;">
+          <strong>핵심:</strong> "배제를 진단하고 포용의 대안을 제시"하는 구조가 학과 전체에 관통합니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 3: 기존 사업단 -->
+<section id="existing">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <h2>기존 BK21 사회학 관련 사업단 현황</h2>
+    <p>4단계 BK21 선정 사업단 조사 결과 및 차별화 분석</p>
+  </div>
+
+  <div class="vs-card" style="border-left: 4px solid #6b46c1;">
+    <div class="vs-name">서울대<br>사회학과</div>
+    <div class="vs-theme">
+      <strong>사회변동과 시민사회 미래인재 양성</strong><br>
+      <span style="font-size:0.82em; color:#718096;">미래인재양성 | 사회과학대학 | 사회변동·시민사회 중심</span><br>
+      <span class="tag tag-purple">사회변동</span>
+      <span class="tag tag-blue">시민사회</span>
+    </div>
+    <div class="vs-diff">거시 사회변동 중심<br>이론적·일반적 프레임</div>
+  </div>
+
+  <div class="vs-card" style="border-left: 4px solid #2b6cb0;">
+    <div class="vs-name">연세대<br>사회학과</div>
+    <div class="vs-theme">
+      <strong>한국사회의 전환과 혁신 교육연구단</strong><br>
+      <span style="font-size:0.82em; color:#718096;">미래인재양성 | 사회과학 융합 | 전환·혁신 중심</span><br>
+      <span class="tag tag-blue">사회전환</span>
+      <span class="tag tag-green">혁신</span>
+    </div>
+    <div class="vs-diff">수도권 중심<br>포괄적 전환 담론</div>
+  </div>
+
+  <div class="vs-card" style="border-left: 4px solid #38a169;">
+    <div class="vs-name">경희대<br>사회학과</div>
+    <div class="vs-theme">
+      <strong>CLIMATES: 기후리터러시 기반 사회과학 연구</strong><br>
+      <span style="font-size:0.82em; color:#718096;">미래인재양성 | 지리학과 주도, 사회학과 참여 | 기후위기 중심</span><br>
+      <span class="tag tag-green">기후위기</span>
+      <span class="tag tag-blue">사회과학 융합</span>
+    </div>
+    <div class="vs-diff">기후 단일 이슈<br>지리학과 주도</div>
+  </div>
+
+  <div class="vs-card" style="border-left: 4px solid #e8590c;">
+    <div class="vs-name">인접 분야<br>사업단들</div>
+    <div class="vs-theme">
+      <strong>다문화·복지·인구 관련 교육연구단</strong><br>
+      <span style="font-size:0.82em; color:#718096;">각 대학 사회복지학과, 다문화학과, 행정학과 등에서 개별 운영</span><br>
+      <span class="tag tag-orange">다문화</span>
+      <span class="tag tag-red">복지</span>
+      <span class="tag tag-teal">인구</span>
+    </div>
+    <div class="vs-diff">단일 주제 특화<br>사회학적 통합 부재</div>
+  </div>
+
+  <div class="highlight" style="margin-top:20px;">
+    <h4>차별화의 핵심 기회</h4>
+    <ul style="font-size:0.9em; padding-left:18px;">
+      <li>기존 사업단들은 "사회변동", "전환", "혁신" 등 <strong>포괄적·추상적 프레임</strong>이 다수</li>
+      <li>"배제-혐오-포용"이라는 <strong>구체적이고 시의적인 문제 프레임</strong>을 가진 사업단 부재</li>
+      <li>비수도권 지역대학 사회학과의 BK21 사업단은 <strong>극히 소수</strong></li>
+      <li>5단계에서 예산 40% 지역혁신형 트랙은 <strong>경북대에 구조적 기회</strong></li>
+      <li>대구·경북은 이슬람사원 갈등, 산업도시 위기, 청년유출 등 <strong>사회적 배제가 가시화된 현장</strong></li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 4: 3개 주제안 -->
+<section id="proposals">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <h2>3개 사업단 주제안</h2>
+    <p>기존 사업단과 차별화된, 교수진 역량 기반의 미래지향적 주제</p>
+  </div>
+
+  <!-- 안 1 -->
+  <div class="proposal-card p1">
+    <div class="proposal-num">안 1 &middot; 최우선 추천</div>
+    <h3>다중위기 시대의 사회적 배제와 포용: 비판사회학 기반 인재 양성 교육연구단</h3>
+    <p class="sub">배제의 메커니즘을 진단하고, 포용의 대안을 설계하는 사회학적 인재 양성</p>
+    <span class="proposal-num" style="background:#f3e8ff; color:#6b46c1;">기초인재 트랙 (인문사회)</span>
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div>
+        <p style="font-size:0.9em; margin-bottom:12px;">
+          <strong>핵심 콘셉트:</strong> 인구절벽·디지털 전환·혐오 확산·돌봄 위기라는
+          <strong>다중위기(polycrisis)</strong>가 중첩되는 시대에,
+          사회적 배제의 메커니즘을 비판적으로 진단하고,
+          사회적경제·시티즌십·문화적 연대를 통한 <strong>포용 사회</strong>의 대안을 모색하는 인재 양성
+        </p>
+        <p style="font-size:0.85em; color:#718096;">
+          <strong>"배제 → 진단 → 대안 → 포용"의 4단계 프레임:</strong><br>
+          ① 누가, 어떻게 배제되는가 (진단)<br>
+          ② 왜 배제가 재생산되는가 (구조 분석)<br>
+          ③ 어떤 대안이 가능한가 (실천)<br>
+          ④ 포용사회는 어떻게 설계되는가 (정책)
+        </p>
+      </div>
+      <div>
+        <table style="font-size:0.85em;">
+          <tr><th>교수</th><th>배제-포용 프레임 내 역할</th></tr>
+          <tr><td><strong>천선영</strong></td><td>존재론적 배제 (죽음·자살·몸), 일상공간의 분할과 격리</td></tr>
+          <tr><td><strong>조주은</strong></td><td>디지털 배제 (정보격차·장애인 접근성), AI시대 새로운 불평등</td></tr>
+          <tr><td><strong>신형진</strong></td><td>이주민 배제 (노동시장·결혼·정착), 인구위기와 이민 대안</td></tr>
+          <tr><td><strong>육주원</strong></td><td>문화적 배제 (혐오·인종주의·난민), 국경만들기의 정치</td></tr>
+          <tr><td><strong>김정원</strong></td><td>경제적 배제의 대안 (사회적경제·자활·협동조합·시티즌십)</td></tr>
+          <tr><td><strong>이정연</strong></td><td>제도적 배제 (정신건강 의료화·종교와 도시), 건강 불평등</td></tr>
+          <tr><td><strong>이상직</strong></td><td>생애과정적 배제 (노숙·장애·청년), 인구레짐과 탈시설 권리</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:16px; padding:12px 16px; background:#f3e8ff; border-radius:8px; font-size:0.88em;">
+      <strong>차별성:</strong> 기존 사업단이 "사회변동", "전환" 등 추상적 프레임을 쓰는 반면,
+      <strong>"배제→포용"이라는 구체적이고 실천적인 문제 프레임</strong>으로 7명 전원의 연구가 자연스럽게 수렴.
+      대구·경북(이슬람사원 갈등, 산업도시 위기, 청년유출)이 <strong>배제의 가시적 현장</strong>으로 기능.
+    </div>
+  </div>
+
+  <!-- 안 2 -->
+  <div class="proposal-card p2">
+    <div class="proposal-num">안 2</div>
+    <h3>AI·인구 대전환기 시민권(Citizenship)의 재구성과 사회적 혁신 인재 양성 교육연구단</h3>
+    <p class="sub">디지털 시민권·이주 시민권·사회적 시민권의 다층적 재편을 연구하는 인재 양성</p>
+    <span class="proposal-num" style="background:#ebf4ff; color:#2b6cb0;">융합인재 트랙 (연합형) 또는 AI인재 트랙 (X+AI)</span>
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div>
+        <p style="font-size:0.9em; margin-bottom:12px;">
+          <strong>핵심 콘셉트:</strong> AI 대전환과 인구절벽이 동시에 진행되면서
+          <strong>시민권(Citizenship)</strong>이 근본적으로 재편되고 있다.
+          디지털 시민권(접근성·알고리즘 차별), 이주 시민권(이민자·난민 권리),
+          사회적 시민권(돌봄·복지·노동) 등 <strong>다층적 시민권의 재구성</strong>을
+          사회학적으로 분석하고 설계하는 인재 양성
+        </p>
+        <p style="font-size:0.85em; color:#718096;">
+          <strong>5단계 AIx 접점:</strong><br>
+          · 조주은: AI 시대 디지털 접근성·알고리즘 편향<br>
+          · 신형진: 빅데이터(센서스) 기반 인구분석<br>
+          · 이상직: 계량분석, 데이터 기반 불평등 측정
+        </p>
+      </div>
+      <div>
+        <table style="font-size:0.85em;">
+          <tr><th>교수</th><th>시민권 재구성 연구</th></tr>
+          <tr><td><strong>조주은</strong></td><td>디지털 시민권: AI 시대 정보접근·알고리즘 공정성</td></tr>
+          <tr><td><strong>신형진</strong></td><td>이주 시민권: 이민자 통합·귀화·다문화 시민성</td></tr>
+          <tr><td><strong>김정원</strong></td><td>사회적 시민권: 사회적경제·시티즌십·돌봄 권리</td></tr>
+          <tr><td><strong>육주원</strong></td><td>문화적 시민권: 반차별·다양성·난민 인정</td></tr>
+          <tr><td><strong>이상직</strong></td><td>생애 시민권: 청년·장애인·노숙인의 권리</td></tr>
+          <tr><td><strong>이정연</strong></td><td>건강 시민권: 정신건강·의료접근·건강주의 비판</td></tr>
+          <tr><td><strong>천선영</strong></td><td>존재론적 시민권: 죽음·존엄·공간의 권리</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:16px; padding:12px 16px; background:#ebf4ff; border-radius:8px; font-size:0.88em;">
+      <strong>차별성:</strong> 5단계가 강조하는 <strong>AI 융합과 시민권</strong>을 결합.
+      "시민권 재구성"은 학술적으로 격조 있으면서도, AI·인구 대전환이라는 <strong>시의성</strong>을 포착.
+      김정원 교수의 시티즌십 연구가 이론적 허브 역할.
+    </div>
+  </div>
+
+  <!-- 안 3 -->
+  <div class="proposal-card p3">
+    <div class="proposal-num">안 3</div>
+    <h3>위기 지역의 사회적 전환과 연대: 지역밀착형 공공사회학 인재 양성 교육연구단</h3>
+    <p class="sub">인구소멸·사회갈등·돌봄 공백에 직면한 비수도권 지역의 사회적 혁신 인재 양성</p>
+    <span class="proposal-num" style="background:#fffaf0; color:#c05621;">기초인재 트랙 (지역형) + 지역혁신형</span>
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div>
+        <p style="font-size:0.9em; margin-bottom:12px;">
+          <strong>핵심 콘셉트:</strong> 인구감소·청년유출·사회갈등이 집중되는
+          <strong>비수도권 위기 지역</strong>의 사회적 문제를 현장 밀착형으로 진단하고,
+          사회적경제·주민 연대·문화적 통합을 통한 <strong>지역 사회 혁신</strong>의
+          실천적 대안을 제시할 수 있는 <strong>공공사회학(Public Sociology)</strong> 인재 양성
+        </p>
+        <p style="font-size:0.85em; color:#718096;">
+          <strong>5단계 지역혁신 정합성:</strong><br>
+          · 예산 40% 지역혁신형 배분 → 경북대 유리<br>
+          · 평가지표 (논문+지역정주 취업률) → 지역 연계 강점<br>
+          · RISE 사업 연동, 대구·경북 현장 기반
+        </p>
+      </div>
+      <div>
+        <table style="font-size:0.85em;">
+          <tr><th>교수</th><th>지역 전환 연구</th></tr>
+          <tr><td><strong>신형진</strong></td><td>대구·경북 대졸자 취업이동, 청년유출 인구학</td></tr>
+          <tr><td><strong>육주원</strong></td><td>대구 이슬람사원 갈등, 지역 다문화 갈등 관리</td></tr>
+          <tr><td><strong>김정원</strong></td><td>지역 사회적경제, 자활센터, 농촌 사회적 일자리</td></tr>
+          <tr><td><strong>이상직</strong></td><td>지역 사회적경제 거버넌스, 청년 노동시장</td></tr>
+          <tr><td><strong>이정연</strong></td><td>도시 종교 변화, 뉴타운 재개발과 지역사회</td></tr>
+          <tr><td><strong>천선영</strong></td><td>대구 일상문화, 공간의 문화정치</td></tr>
+          <tr><td><strong>조주은</strong></td><td>지역의 디지털 격차, 전자정부 접근성</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:16px; padding:12px 16px; background:#fffaf0; border-radius:8px; font-size:0.88em;">
+      <strong>차별성:</strong> 5단계 최대 예산 <strong>지역혁신형 트랙</strong>에 최적화.
+      "공공사회학"이라는 <strong>학문적 정체성</strong>과 대구·경북 현장성의 결합.
+      수도권 사업단이 가질 수 없는 <strong>지역밀착 실증연구</strong> 강점.
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 5: 개념도 -->
+<section id="concept" style="background:#f3e8ff;">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <h2>안 1 개념도: 다중위기 시대의 배제와 포용</h2>
+    <p>최우선 추천안의 연구 구조와 교수진 연계</p>
+  </div>
+
+  <div class="diagram-container">
+    <div class="diagram-title">다중위기(Polycrisis) × 배제-포용 프레임 교육연구단 개념도</div>
+    <svg viewBox="0 0 1000 750" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:1000px; display:block; margin:0 auto;">
+      <defs>
+        <linearGradient id="gCrisis" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#e53e3e" />
+          <stop offset="100%" style="stop-color:#c53030" />
+        </linearGradient>
+        <linearGradient id="gDiag" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#7b2d8e" />
+          <stop offset="100%" style="stop-color:#553c9a" />
+        </linearGradient>
+        <linearGradient id="gAlt" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#2b6cb0" />
+          <stop offset="100%" style="stop-color:#2c5282" />
+        </linearGradient>
+        <linearGradient id="gIncl" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#38a169" />
+          <stop offset="100%" style="stop-color:#276749" />
+        </linearGradient>
+        <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.15"/></filter>
+        <filter id="shadowSm"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.1"/></filter>
+        <marker id="arrowDown" markerWidth="8" markerHeight="8" refX="4" refY="8" orient="auto"><path d="M0,0 L4,8 L8,0" fill="#4a5568"/></marker>
+        <marker id="arrowRight" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#4a5568"/></marker>
+      </defs>
+
+      <text x="500" y="28" text-anchor="middle" font-size="12" fill="#718096" font-weight="600">▼ 다중위기가 사회적 배제를 심화시키고, 비판사회학이 포용의 대안을 제시하는 구조</text>
+
+      <!-- 4 Crises at top -->
+      <rect x="30" y="50" width="210" height="65" rx="12" fill="url(#gCrisis)" filter="url(#shadow)"/>
+      <text x="135" y="78" text-anchor="middle" fill="white" font-size="14" font-weight="700">인구 위기</text>
+      <text x="135" y="98" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">인구절벽 · 고령화 · 청년유출</text>
+
+      <rect x="260" y="50" width="210" height="65" rx="12" fill="url(#gCrisis)" filter="url(#shadow)"/>
+      <text x="365" y="78" text-anchor="middle" fill="white" font-size="14" font-weight="700">디지털 전환 위기</text>
+      <text x="365" y="98" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">AI 대전환 · 정보격차 · 알고리즘 편향</text>
+
+      <rect x="490" y="50" width="210" height="65" rx="12" fill="url(#gCrisis)" filter="url(#shadow)"/>
+      <text x="595" y="78" text-anchor="middle" fill="white" font-size="14" font-weight="700">사회갈등 위기</text>
+      <text x="595" y="98" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">혐오 확산 · 인종주의 · 다문화 갈등</text>
+
+      <rect x="720" y="50" width="210" height="65" rx="12" fill="url(#gCrisis)" filter="url(#shadow)"/>
+      <text x="825" y="78" text-anchor="middle" fill="white" font-size="14" font-weight="700">돌봄·존엄 위기</text>
+      <text x="825" y="98" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">건강 불평등 · 정신건강 · 죽음 존엄</text>
+
+      <!-- Arrows down -->
+      <line x1="135" y1="115" x2="135" y2="160" stroke="#c53030" stroke-width="2" stroke-dasharray="4,3"/>
+      <line x1="365" y1="115" x2="365" y2="160" stroke="#c53030" stroke-width="2" stroke-dasharray="4,3"/>
+      <line x1="595" y1="115" x2="595" y2="160" stroke="#c53030" stroke-width="2" stroke-dasharray="4,3"/>
+      <line x1="825" y1="115" x2="825" y2="160" stroke="#c53030" stroke-width="2" stroke-dasharray="4,3"/>
+
+      <!-- Exclusion Band -->
+      <rect x="50" y="160" width="860" height="50" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+      <text x="480" y="190" text-anchor="middle" fill="#c53030" font-size="15" font-weight="800">사회적 배제 (Social Exclusion) 의 심화</text>
+
+      <!-- Arrow down to diagnosis -->
+      <line x1="480" y1="210" x2="480" y2="250" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+      <text x="480" y="240" text-anchor="middle" fill="#718096" font-size="10" font-weight="600">비판적 진단</text>
+
+      <!-- 4 Exclusion Types + Professors -->
+      <rect x="30" y="260" width="220" height="110" rx="10" fill="white" stroke="#7b2d8e" stroke-width="2" filter="url(#shadowSm)"/>
+      <rect x="30" y="260" width="220" height="32" rx="10" fill="#7b2d8e"/>
+      <rect x="30" y="278" width="220" height="14" fill="#7b2d8e"/>
+      <text x="140" y="282" text-anchor="middle" fill="white" font-size="12" font-weight="700">존재론적 · 공간적 배제</text>
+      <text x="140" y="315" text-anchor="middle" fill="#4a5568" font-size="10.5" font-weight="600">천선영 — 죽음·자살·일상공간</text>
+      <text x="140" y="335" text-anchor="middle" fill="#4a5568" font-size="10.5" font-weight="600">이정연 — 정신건강·의료화·도시</text>
+      <text x="140" y="355" text-anchor="middle" fill="#718096" font-size="9">공간의 분할, 건강 불평등, 존엄의 위기</text>
+
+      <rect x="270" y="260" width="220" height="110" rx="10" fill="white" stroke="#2b6cb0" stroke-width="2" filter="url(#shadowSm)"/>
+      <rect x="270" y="260" width="220" height="32" rx="10" fill="#2b6cb0"/>
+      <rect x="270" y="278" width="220" height="14" fill="#2b6cb0"/>
+      <text x="380" y="282" text-anchor="middle" fill="white" font-size="12" font-weight="700">디지털 · 구조적 배제</text>
+      <text x="380" y="315" text-anchor="middle" fill="#4a5568" font-size="10.5" font-weight="600">조주은 — 정보격차·장애·접근성</text>
+      <text x="380" y="335" text-anchor="middle" fill="#4a5568" font-size="10.5" font-weight="600">이상직 — 노숙·장애·생애과정</text>
+      <text x="380" y="355" text-anchor="middle" fill="#718096" font-size="9">디지털 소외, 제도적 배제, 권리 박탈</text>
+
+      <rect x="510" y="260" width="220" height="110" rx="10" fill="white" stroke="#e8590c" stroke-width="2" filter="url(#shadowSm)"/>
+      <rect x="510" y="260" width="220" height="32" rx="10" fill="#e8590c"/>
+      <rect x="510" y="278" width="220" height="14" fill="#e8590c"/>
+      <text x="620" y="282" text-anchor="middle" fill="white" font-size="12" font-weight="700">문화적 · 인종적 배제</text>
+      <text x="620" y="315" text-anchor="middle" fill="#4a5568" font-size="10.5" font-weight="600">육주원 — 혐오·인종주의·난민</text>
+      <text x="620" y="335" text-anchor="middle" fill="#4a5568" font-size="10.5" font-weight="600">신형진 — 이민자 차별·통혼 장벽</text>
+      <text x="620" y="355" text-anchor="middle" fill="#718096" font-size="9">타자화, 국경만들기, 다문화 갈등</text>
+
+      <rect x="750" y="260" width="220" height="110" rx="10" fill="white" stroke="#38a169" stroke-width="2" filter="url(#shadowSm)"/>
+      <rect x="750" y="260" width="220" height="32" rx="10" fill="#38a169"/>
+      <rect x="750" y="278" width="220" height="14" fill="#38a169"/>
+      <text x="860" y="282" text-anchor="middle" fill="white" font-size="12" font-weight="700">경제적 · 제도적 배제</text>
+      <text x="860" y="315" text-anchor="middle" fill="#4a5568" font-size="10.5" font-weight="600">김정원 — 빈곤·자활·돌봄 공백</text>
+      <text x="860" y="335" text-anchor="middle" fill="#4a5568" font-size="10.5" font-weight="600">이상직 — 청년 불평등·인구레짐</text>
+      <text x="860" y="355" text-anchor="middle" fill="#718096" font-size="9">빈곤의 재생산, 노동 배제, 복지 사각</text>
+
+      <!-- Arrow down to alternatives -->
+      <line x1="480" y1="380" x2="480" y2="420" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+      <text x="480" y="410" text-anchor="middle" fill="#718096" font-size="10" font-weight="600">대안 모색</text>
+
+      <!-- Alternatives Band -->
+      <rect x="100" y="425" width="760" height="110" rx="14" fill="white" stroke="#2b6cb0" stroke-width="2" filter="url(#shadow)"/>
+      <text x="480" y="450" text-anchor="middle" fill="#2b6cb0" font-size="14" font-weight="800">포용의 대안적 실천</text>
+
+      <rect x="130" y="462" width="160" height="55" rx="8" fill="#f3e8ff" stroke="#d6bcfa" stroke-width="1"/>
+      <text x="210" y="484" text-anchor="middle" fill="#553c9a" font-size="11" font-weight="700">사회적경제·연대</text>
+      <text x="210" y="500" text-anchor="middle" fill="#718096" font-size="9">김정원·이상직</text>
+
+      <rect x="310" y="462" width="160" height="55" rx="8" fill="#ebf4ff" stroke="#bee3f8" stroke-width="1"/>
+      <text x="390" y="484" text-anchor="middle" fill="#2b6cb0" font-size="11" font-weight="700">시티즌십·권리</text>
+      <text x="390" y="500" text-anchor="middle" fill="#718096" font-size="9">이상직·육주원·김정원</text>
+
+      <rect x="490" y="462" width="160" height="55" rx="8" fill="#f0fff4" stroke="#c6f6d5" stroke-width="1"/>
+      <text x="570" y="484" text-anchor="middle" fill="#276749" font-size="11" font-weight="700">다문화·통합</text>
+      <text x="570" y="500" text-anchor="middle" fill="#718096" font-size="9">신형진·육주원</text>
+
+      <rect x="670" y="462" width="160" height="55" rx="8" fill="#fffaf0" stroke="#feebc8" stroke-width="1"/>
+      <text x="750" y="484" text-anchor="middle" fill="#c05621" font-size="11" font-weight="700">디지털·문화 포용</text>
+      <text x="750" y="500" text-anchor="middle" fill="#718096" font-size="9">조주은·천선영</text>
+
+      <!-- Arrow down to output -->
+      <line x1="480" y1="535" x2="480" y2="575" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+
+      <!-- Output -->
+      <rect x="250" y="580" width="460" height="70" rx="16" fill="url(#gIncl)" filter="url(#shadow)"/>
+      <text x="480" y="608" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11" font-weight="600">OUTPUT</text>
+      <text x="480" y="632" text-anchor="middle" fill="white" font-size="17" font-weight="800">포용 사회(Inclusive Society) 설계</text>
+
+      <!-- Daegu-Gyeongbuk label -->
+      <rect x="50" y="580" width="180" height="70" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5" stroke-dasharray="4,3" filter="url(#shadowSm)"/>
+      <text x="140" y="608" text-anchor="middle" fill="#c05621" font-size="11" font-weight="700">대구·경북 현장</text>
+      <text x="140" y="625" text-anchor="middle" fill="#975a16" font-size="9">이슬람사원 갈등 · 산업도시 위기</text>
+      <text x="140" y="638" text-anchor="middle" fill="#975a16" font-size="9">청년유출 · 지역 사회적경제</text>
+
+      <!-- Bottom outcomes -->
+      <text x="480" y="690" text-anchor="middle" fill="#718096" font-size="11">
+        혐오 대응 | 디지털 포용 | 이주민 통합 | 돌봄 체계 | 청년 정주 | 건강 형평 | 존엄한 삶
+      </text>
+
+      <!-- 5단계 alignment -->
+      <rect x="730" y="580" width="220" height="70" rx="10" fill="#ebf4ff" stroke="#63b3ed" stroke-width="1.5" stroke-dasharray="4,3" filter="url(#shadowSm)"/>
+      <text x="840" y="604" text-anchor="middle" fill="#2b6cb0" font-size="10" font-weight="700">5단계 BK21 정합성</text>
+      <text x="840" y="620" text-anchor="middle" fill="#4a5568" font-size="9">기초인재 트랙 (인문사회 보호)</text>
+      <text x="840" y="634" text-anchor="middle" fill="#4a5568" font-size="9">지역균형발전 · 지역혁신형 연계</text>
+      <text x="840" y="648" text-anchor="middle" fill="#4a5568" font-size="9">전주기적 인재 양성</text>
+    </svg>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 6: 비교 평가 -->
+<section id="comparison">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <h2>3개안 종합 비교 평가</h2>
+    <p>6개 평가 기준별 비교</p>
+  </div>
+
+  <div class="card">
+    <table>
+      <tr>
+        <th>평가 기준</th>
+        <th style="text-align:center;">안 1: 배제와 포용</th>
+        <th style="text-align:center;">안 2: 시민권 재구성</th>
+        <th style="text-align:center;">안 3: 공공사회학</th>
+      </tr>
+      <tr>
+        <td><strong>5단계 방향 부합도</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+      </tr>
+      <tr>
+        <td><strong>7명 교수 포괄도</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+      </tr>
+      <tr>
+        <td><strong>기존 사업단 차별성</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+      </tr>
+      <tr>
+        <td><strong>지역대학 어필</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★</span><span class="stars-empty">★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>미래 지향성</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+      </tr>
+      <tr>
+        <td><strong>학문적 정체성</strong></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★★</span></td>
+        <td style="text-align:center;"><span class="stars">★★★★</span><span class="stars-empty">★</span></td>
+      </tr>
+      <tr style="background:#f3e8ff;">
+        <td><strong>종합</strong></td>
+        <td style="text-align:center; font-weight:700; color:#7b2d8e;">28/30</td>
+        <td style="text-align:center; font-weight:700; color:#2b6cb0;">27/30</td>
+        <td style="text-align:center; font-weight:700; color:#c05621;">26/30</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="grid-3" style="margin-top:24px;">
+    <div class="card" style="border-top:3px solid #7b2d8e;">
+      <h3 style="color:#7b2d8e;">안 1의 강점</h3>
+      <ul style="font-size:0.85em; padding-left:18px;">
+        <li>7명 교수 전원이 <strong>자연스럽게</strong> "배제→포용" 프레임에 수렴</li>
+        <li><strong>"다중위기×배제"</strong>는 기존 사업단에 없는 독자 프레임</li>
+        <li>비판사회학의 <strong>학문적 정체성</strong>이 명확</li>
+        <li>대구·경북이 배제의 <strong>가시적 현장</strong></li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:3px solid #2b6cb0;">
+      <h3 style="color:#2b6cb0;">안 2의 강점</h3>
+      <ul style="font-size:0.85em; padding-left:18px;">
+        <li><strong>AI·디지털 전환</strong> 강조로 5단계 방향 최적</li>
+        <li>"시민권" 개념의 <strong>학술적 격조</strong></li>
+        <li>김정원 시티즌십 연구가 <strong>이론적 허브</strong></li>
+        <li>융합인재/AI인재 트랙 <strong>진입 가능성</strong></li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:3px solid #e8590c;">
+      <h3 style="color:#e8590c;">안 3의 강점</h3>
+      <ul style="font-size:0.85em; padding-left:18px;">
+        <li>예산 40% <strong>지역혁신형</strong> 최적화</li>
+        <li>"공공사회학" <strong>실천적 정체성</strong></li>
+        <li>대구·경북 <strong>현장 밀착</strong> 연구 강점</li>
+        <li>지역정주 취업률 <strong>평가지표</strong> 유리</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 7: 최종 추천 -->
+<section id="recommendation">
+<div class="container">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <h2>최종 추천 및 전략</h2>
+    <p>검토 의견</p>
+  </div>
+
+  <div class="card" style="border:2px solid #7b2d8e; background:linear-gradient(135deg, #faf5ff, #f7fafc);">
+    <h3 style="font-size:1.3em; color:#4a1942;">최우선 추천: 안 1 (다중위기 시대의 배제와 포용)</h3>
+    <div style="margin-top:16px; font-size:0.92em;">
+      <p><strong>추천 이유:</strong></p>
+      <ol style="padding-left:20px; margin-top:8px;">
+        <li style="margin-bottom:8px;">7명 교수 모두의 연구가 <strong>"배제→포용"이라는 하나의 프레임</strong>으로 자연스럽게 수렴</li>
+        <li style="margin-bottom:8px;">기존 사업단의 "사회변동", "전환" 등 추상적 프레임과 <strong>명확히 차별화</strong></li>
+        <li style="margin-bottom:8px;">"다중위기(polycrisis)"라는 개념은 <strong>국제 사회과학의 최신 의제</strong>이자 한국 BK21에서 미선점</li>
+        <li style="margin-bottom:8px;">대구(이슬람사원 갈등), 경북(산업도시 위기), 지역(청년유출·고령화)이 <strong>배제의 살아있는 현장</strong></li>
+        <li style="margin-bottom:8px;">비판사회학(진단) + 사회적경제(대안)의 결합은 <strong>이론과 실천의 통합</strong></li>
+      </ol>
+    </div>
+    <div style="margin-top:20px; padding:16px; background:white; border-radius:10px; border:1px solid #d6bcfa;">
+      <h4 style="color:#7b2d8e; margin-bottom:8px;">전략적 제안</h4>
+      <p style="font-size:0.88em;">
+        안 1을 기본 프레임으로 하되, <strong>안 2의 "시민권" 개념</strong>을 이론적 키워드로 내재화하면
+        학술적 깊이가 강화됩니다. 또한 <strong>안 3의 "공공사회학" 정체성과 지역밀착 전략</strong>을
+        실천 방법론으로 포함시키면, 기초인재 트랙에서의 선정 가능성과
+        지역혁신형 연계 가능성을 동시에 확보할 수 있습니다.
+      </p>
+      <p style="font-size:0.88em; margin-top:10px;">
+        즉, <strong>"다중위기 시대의 사회적 배제와 포용적 시민권"</strong>이라는 제목으로
+        안 1(문제 프레임) + 안 2(이론적 키워드) + 안 3(실천 전략)을 통합하는 것을 권고합니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:24px;">
+    <h4>향후 검토 필요 사항</h4>
+    <ul style="font-size:0.9em; padding-left:18px;">
+      <li>기초인재 vs 융합인재 트랙 선택 전략 (5단계 기본계획 시안 2026년 말 확정 후 결정)</li>
+      <li>연합형 구성 시 파트너 학과 검토 (사회복지학과, 행정학과, 심리학과 등)</li>
+      <li>대학원생 충원 전략 및 전주기적 양성 체계</li>
+      <li>국제 공동학위 파트너 (이민·다문화 연구 해외 대학)</li>
+      <li>지역 연계 기관 (대구이주민센터, 경북자활센터, 대구시 다문화정책 등)</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p><strong>경북대학교 사회학과 BK21 5단계 제안서</strong> &middot; 내부검토용 비공개 자료</p>
+  <p style="margin-top:8px;">2026.05.18 작성 &middot; 무단 배포 금지</p>
+</footer>
+
+</body>
+</html>
